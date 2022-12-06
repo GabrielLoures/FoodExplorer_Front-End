@@ -19,4 +19,7 @@ export const Container = styled.button`
   border: none;
   border-radius: 5px;
 
+  display: flex;
+  gap: 11px;
+
 `
