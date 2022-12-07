@@ -6,6 +6,8 @@ export default {
     BACKGROUND_HEADER_FOOTER: "#00111A",
     BACKGROUND_CARD: "rgba(0, 0, 0, 0.32)",
 
+    CARD_BORDER: "rgba(0, 0, 0, 0.65)",
+
     WHITE: "#FFFFFF",
     BLUE: "#82F3FF",
     BLUE_LOGO: "#065E7C",
