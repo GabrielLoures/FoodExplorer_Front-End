@@ -1,5 +1,6 @@
 import { Header } from "../../components/Header"
-import { Button } from "../../components/Button"
+import { Footer } from "../../components/Footer"
+
 import { Container } from "./styles"
 
 export function Details() {
@@ -9,6 +10,8 @@ export function Details() {
     <Container>
 
       <Header/>
+
+      <Footer/>
 
     </Container>
     

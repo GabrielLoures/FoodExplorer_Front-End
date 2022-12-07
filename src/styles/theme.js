@@ -14,6 +14,7 @@ export default {
     GRAY_CARD: "#C4C4CC",
     GRAY_INPUT: "#7C7C8A",
     GRAY_BUTTON: "rgba(255, 255, 255, 0.1)",
+    GRAY_LOGO: "rgba(255, 255, 255, 0.3)",
 
     RED: "#92000E"
   }
