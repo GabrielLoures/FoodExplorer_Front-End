@@ -7,6 +7,10 @@ export const Container = styled.footer`
   width: 100%;
   height: 92px;
 
+  position: fixed;
+  z-index: 100;
+  bottom: 0;
+
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_HEADER_FOOTER};
 
   display: flex;

@@ -4,6 +4,9 @@ export const Container = styled.header`
 
   grid-area: header;
 
+  position: fixed;
+  z-index: 100;
+
   height: 105px;
   width: 100%;
 

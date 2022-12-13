@@ -1,5 +1,5 @@
 import { BiHeart } from "react-icons/bi";
-import plate1 from "../../assets/Mask group-1.png"
+import plate1 from "../../assets/ravanello.png"
 import { Button } from "../Button"
 
 import { Container } from './styles'
