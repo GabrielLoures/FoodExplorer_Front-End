@@ -46,6 +46,14 @@ export const Content = styled.div`
     }
   }
 
+  @media (max-width: 820px) {
+    
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    
+  }
+
 `;
 
 export const Form = styled.form`

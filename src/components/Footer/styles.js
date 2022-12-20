@@ -46,6 +46,12 @@ export const Container = styled.footer`
     
     padding: 23px 10px;
 
-  } 
+  }
+  
+  @media (max-width: 820px) {
+    
+    display: none;
+    
+  }
 
 `

@@ -20,6 +20,12 @@ export const Content = styled.div`
 
   padding: 25px 300px 168px 130px;
 
+  @media (max-width: 820px) {
+    
+    padding: 25px 100px;
+    
+  }
+
 `;
 
 export const ContentHeader = styled.div`
@@ -146,7 +152,13 @@ export const MainContent = styled.div`
       color: ${({ theme }) => theme.COLORS.GRAY_H1};
     }
   }
-  
+
+  @media (max-width: 820px) {
+    
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
 
 `
 
