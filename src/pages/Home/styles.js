@@ -46,6 +46,10 @@ export const FirstSection = styled.div`
     margin-left: -100px;
   }
 
+  @media (max-width: 1142px) {
+    display: none;
+  }
+
 `;
 
 export const Content = styled.div`
@@ -58,5 +62,10 @@ export const Content = styled.div`
     height: 260px;
     background: linear-gradient(180deg, #091E26 0%, #00131C 100%);
     align-items: center; 
+  }
+
+  @media (max-width: 1142px) {
+    
+    padding: 30px;
   }
 `;

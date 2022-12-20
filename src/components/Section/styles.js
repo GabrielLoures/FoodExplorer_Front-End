@@ -57,6 +57,12 @@ position: relative;
   .hidden {
     display: none;
   }
+
+  @media (max-width: 1142px) {
+    > div {
+      max-width: 1100px;
+    }
+  }
   
 `
 
