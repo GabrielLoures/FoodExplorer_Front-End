@@ -81,6 +81,25 @@ export const Form = styled.form`
     max-width: 300px;
   }
 
+  @media (max-width: 820px) {
+    > .first-row {
+    display: block;
+    }
+
+    > .second-row {
+      display: block;
+    }
+
+    > .button-row {
+      display: block;
+    }
+
+    > .button-row .add-button {
+      width: 100%;
+      max-width: 1000px;
+    }
+  }
+
 `;
 
 export const InputWrapper = styled.div`
@@ -158,6 +177,10 @@ export const ImageUpload = styled.div`
     line-height: 24px;
     color: ${({ theme }) => theme.COLORS.WHITE};
   }
+
+  @media (max-width: 820px) {
+    margin-bottom: 80px;
+  }
 `;
 
 export const InputIngredients = styled.div`
@@ -173,4 +196,4 @@ export const InputIngredients = styled.div`
   border: 1px solid ${({ theme }) => theme.COLORS.WHITE};
   border-radius: 5px;
 
-`
+`;
