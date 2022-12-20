@@ -42,4 +42,10 @@ export const Container = styled.footer`
     color: ${({ theme }) => theme.COLORS.WHITE};
   }
 
+  @media (max-width: 1142px) {
+    
+    padding: 23px 10px;
+
+  } 
+
 `

@@ -81,7 +81,7 @@ export const Form = styled.form`
     max-width: 300px;
   }
 
-  @media (max-width: 820px) {
+  @media (max-width: 1142px) {
     > .first-row {
     display: block;
     }
@@ -178,7 +178,7 @@ export const ImageUpload = styled.div`
     color: ${({ theme }) => theme.COLORS.WHITE};
   }
 
-  @media (max-width: 820px) {
+  @media (max-width: 1142px) {
     margin-bottom: 80px;
   }
 `;

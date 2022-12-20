@@ -57,6 +57,22 @@ export const Container = styled.header`
     max-width: 216px;
   }
 
+  @media (max-width: 1142px) {
+    padding: 23px 5px;
+
+    a {
+      margin-right: -20px;
+      margin-left: -10px;
+    }
+
+    > .logo {
+      display: none;
+    }
+    > .order-button {
+      display: none;
+    }
+  }
+
 `
 
 export const Logout = styled.button`
