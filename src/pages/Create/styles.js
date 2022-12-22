@@ -62,6 +62,10 @@ export const Form = styled.form`
     gap: 100px;
   }
 
+  > .first-row .plateName {
+    margin-right: -75px;
+  }
+
   > .second-row {
     display: flex;
     gap: 32px;
@@ -81,7 +85,7 @@ export const Form = styled.form`
     max-width: 300px;
   }
 
-  @media (max-width: 1142px) {
+  @media (max-width: 1612px) {
     > .first-row {
     display: block;
     }
@@ -148,7 +152,7 @@ export const ImageUpload = styled.div`
   }
 
   > label {
-    width: 300px;
+    width: 200px;
     height: 48px;
     background: transparent;
     border: 1px solid white;
@@ -178,7 +182,7 @@ export const ImageUpload = styled.div`
     color: ${({ theme }) => theme.COLORS.WHITE};
   }
 
-  @media (max-width: 1142px) {
+  @media (max-width: 1612px) {
     margin-bottom: 80px;
   }
 `;

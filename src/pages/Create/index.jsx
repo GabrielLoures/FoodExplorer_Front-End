@@ -34,18 +34,23 @@ export function Create() {
           <div className="first-row">
             <ImageUpload>
 
-            <p>Imagem do Prato</p>
-            <label htmlFor="image-upload">
-              <MdOutlineFileUpload />
-              <h2>Selecione a Imagem</h2>
-              <input id="image-upload" type="file" />
-            </label>
+              <p>Imagem do Prato</p>
+              <label htmlFor="image-upload">
+                <MdOutlineFileUpload />
+                <h2>Selecione a Imagem</h2>
+                <input id="image-upload" type="file" />
+              </label>
 
             </ImageUpload>
 
-            <InputWrapper>
+            <InputWrapper className="plateName">
               <label htmlFor="plate-name">Nome</label>
               <Input id="plate-name" className="bordered-input" type="text" placeholder="Ex: Salada Ceasar"/>
+            </InputWrapper>
+
+            <InputWrapper>
+              <label htmlFor="plate-category">Categoria</label>
+              <Input id="plate-category" className="bordered-input" type="text" placeholder="Ex: Brasileira"/>
             </InputWrapper>
             
           </div>
