@@ -22,6 +22,9 @@ export const Container = styled.header`
   > .logo {
     display: flex;
     gap: 12px;
+    :hover {
+      filter:none
+    };
 
     h1 {
       font-family: 'Roboto';

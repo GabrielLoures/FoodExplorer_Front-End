@@ -13,6 +13,8 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
 
+  cursor: pointer;
+
   padding: 0 22.5px;
 
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_CARD};

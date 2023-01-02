@@ -1,4 +1,8 @@
-import { Header } from "../../components/Header"
+import { Link } from 'react-router-dom'
+import { useState } from 'react'
+
+import { useAuth } from '../../hooks/auth'
+
 import { Footer } from "../../components/Footer"
 import { Input } from "../../components/Input"
 import { Button } from "../../components/Button"
@@ -9,11 +13,18 @@ import { Container, Content, Form } from './styles'
 
 export function SignIn() {
 
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+
+  const { signIn } = useAuth()
+
+  function handleSignIn() {
+    signIn({ email, password })
+  }
+
   return (
     <Container>
-
-      <Header />
-
+      
       <Content>
 
         <div className="logo">
@@ -31,6 +42,7 @@ export function SignIn() {
             className="sign-input" 
             type="text" 
             placeholder="Exemplo:exemplo@exemplo.com.br"
+            onChange={e => setEmail(e.target.value)}
           />
 
           <label htmlFor="user-password">Senha</label>
@@ -39,11 +51,12 @@ export function SignIn() {
             className="sign-input"
             type="password" 
             placeholder="No mínimo 6 caracteres"
+            onChange={e => setPassword(e.target.value)}
           />
 
-          <Button className="sign-btn" title="Entrar" />
+          <Button className="sign-btn" title="Entrar" onClick={handleSignIn}/>
 
-          <a href="#">Crie sua conta</a>
+          <Link to="/register">Crie sua conta</Link>
 
         </Form>
 
