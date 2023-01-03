@@ -17,7 +17,7 @@ import { IngredientItem } from "../../components/IngredientItem"
 export function Create() {
 
   const [title, setTitle] = useState("")
-  const [category, setCategory] = useState("")
+  const [category, setCategory] = useState("main-dish")
   const [ingredients, setIngredients] = useState([])
   const [newIngredient, setNewIngredient] = useState("")
   const [price, setPrice] = useState("")
@@ -60,12 +60,15 @@ export function Create() {
         alert("Prato criado com sucesso!")
         navigate("/")
       })
+      .catch(error => {
+        if(error.response){
+          alert(error.response.data.message)
+      }})
   }
-
   return(
     <Container>
 
-      <Header/>
+      <Header />
 
       <Content>
 
@@ -111,13 +114,15 @@ export function Create() {
 
             <InputWrapper>
               <label htmlFor="plate-category">Categoria</label>
-              <Input 
+              <select 
                 id="plate-category" 
                 className="bordered-input" 
-                type="text" 
-                placeholder="Ex: Brasileira"
                 onChange={e => setCategory(e.target.value)}
-              />
+              >
+                <option value="main-dish">Prato Principal</option>
+                <option value="drink">Bebida</option>
+                <option value="dessert">Sobremesa</option>
+              </select>
             </InputWrapper>
             
           </div>

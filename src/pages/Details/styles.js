@@ -102,6 +102,7 @@ export const MainContent = styled.div`
       font-weight: 400;
       font-size: 18px;
       line-height: 140%;
+      text-transform: capitalize;
       color: ${({ theme }) => theme.COLORS.GRAY_H1};
 
       margin-top: 8px;

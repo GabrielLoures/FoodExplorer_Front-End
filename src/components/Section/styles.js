@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const Container = styled.section`
 
   width: 100%;
+  margin-top: 40px;
   
   > h2 {
     font-family: 'Poppins';
@@ -11,7 +12,7 @@ export const Container = styled.section`
     font-size: 32px;
     line-height: 140%;
     color: ${({ theme }) => theme.COLORS.GRAY_H1};
-    margin-bottom: 39.5px;
+    margin-bottom: 9.5px;
   }
 `;
 

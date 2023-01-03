@@ -1,19 +1,35 @@
+import { useState, useEffect } from 'react'
+
 import { Header } from "../../components/Header"
 import { Footer } from "../../components/Footer"
 import { Button } from "../../components/Button"
 
+import { Link, useNavigate, useParams } from 'react-router-dom'
+
 import { MdOutlineArrowBackIos } from "react-icons/md"
 
-import salad from "../../assets/ravanello.png"
-import lettuce from "../../assets/alface.png"
-import tomato from "../../assets/tomate.png"
-import radish from "../../assets/rabanete.png"
-import naan from "../../assets/naan.png"
 import order from "../../assets/order-logo.svg"
 
 import { Container, ContentHeader, Content, MainContent } from "./styles"
+import { api } from '../../services/api'
 
 export function Details() {
+
+  const [data, setData] = useState(null)
+  const params = useParams()
+
+  const imageURL = data && `${api.defaults.baseURL}/files/${data.image}`
+ 
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    async function fetchDish() {
+      const res = await api.get(`/dishes/${params.id}`)
+      setData(res.data)
+    }
+
+    fetchDish()
+  }, [])
 
   return (
 
@@ -24,61 +40,55 @@ export function Details() {
       <Content>
 
         <ContentHeader>
-          <a href="#">
+          <Link to="/">
             <MdOutlineArrowBackIos/>
             <span>Voltar</span>
-          </a>
+          </Link>
         </ContentHeader>
 
-        <MainContent>
-          <img src={salad} alt="Salada Ravanello" />
-          <div className="description">
+        { data &&
 
-            <div className="texts">
-              <h1>Salada Ravanello</h1>
-              <p>Rabanetes, folhas verdes e molho agridoce salpicados com gergelim</p>
-            </div>
+          <MainContent>
+            <img src={imageURL} alt={`Imagem do prato ${data.title}`} />
+            <div className="description">
 
-            <div className="products-list">
-              <ul>
-                <li>
-                  <img src={lettuce} alt="Alface" />
-                  <p>Alface</p>
-                </li>
-                <li>
-                  <img src={tomato} alt="Tomate" />
-                  <p>Tomate</p>
-                </li>
-                <li>
-                  <img src={radish} alt="Rabante" />
-                  <p>Rabante</p>
-                </li>
-                <li>
-                  <img src={naan} alt="Pão Naan" />
-                  <p>Pão Naan</p>
-                </li>
-              </ul>
-            </div>
-
-            <div className="payments-details">
-
-              <div className="value">
-                <h1>R$</h1> 
-                <h1>25,97</h1>
+              <div className="texts">
+                <h1>{data.title}</h1>
+                <p>{data.description}</p>
               </div>
 
-              <div className="plus-minus">
-                <h5>-</h5>
-                <h5>01</h5>
-                <h5>+</h5>
+              <div className="products-list">
+                <ul>
+                  {data.ingredients.map(ingredient => (
+                    <li key={ingredient.id}>
+                      <img src={`${api.defaults.baseURL}/${ingredient.image}`}  alt={`Imagem do ingrediente ${ingredient.name}`} />
+                      <p>{ingredient.name}</p>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              
-              <Button icon={order} title="Incluir"/>
+
+              <div className="payments-details">
+
+                <div className="value">
+                  <h1>R$</h1> 
+                  <h1>{data.price}</h1>
+                </div>
+
+                <div className="plus-minus">
+                  <h5>-</h5>
+                  <h5>01</h5>
+                  <h5>+</h5>
+                </div>
+                
+                <Button icon={order} title="Incluir"/>
+
+              </div>
 
             </div>
+          </MainContent>
 
-          </div>
-        </MainContent>
+        }
 
       </Content>
 

@@ -12,7 +12,7 @@ export const Container = styled.header`
 
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 32px;
 
   padding: 23px 124px;

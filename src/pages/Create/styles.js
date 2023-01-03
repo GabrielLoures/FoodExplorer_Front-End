@@ -130,6 +130,27 @@ export const InputWrapper = styled.div`
     border-radius: 5px;
   }
 
+  select {
+    width: 100%;
+  display: flex;
+  align-items: center;
+
+  background-color: ${({ theme }) => theme.COLORS.BACKGROUND_INPUT};
+  color: ${({ theme }) => theme.COLORS.WHITE};
+
+  border-radius: 5px;
+
+  
+    height: 48px;
+    width: 100%;
+
+    padding: 14px;
+
+    color: ${({ theme }) => theme.COLORS.GRAY_CARD};
+    background: transparent;
+    border: none;
+  }
+
 `;
 
 export const ImageUpload = styled.div`

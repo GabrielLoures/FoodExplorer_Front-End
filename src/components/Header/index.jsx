@@ -1,16 +1,15 @@
 import { Container, Logout } from './styles'
 import { useAuth } from '../../hooks/auth'
 
-import { Input } from '../Input'
 import { Button } from '../Button'
 
 import logo from "../../assets/blue-logo.svg"
 import orderlogo from "../../assets/order-logo.svg"
-import { FiSearch, FiLogOut } from "react-icons/fi";
+import { FiLogOut } from "react-icons/fi";
 
 import { Link } from "react-router-dom"
 
-export function Header() {
+export function Header({ children }) {
 
   const { signOut, user } = useAuth()
 
@@ -30,7 +29,7 @@ export function Header() {
         </>)
       }
 
-      <Input icon={FiSearch} placeholder="Busque pelas opções de pratos"/>
+      {children}
 
       <Button className="order-button" icon={orderlogo} title="Meus pedidos"/>
 

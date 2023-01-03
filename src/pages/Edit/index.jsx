@@ -11,8 +11,6 @@ import { Input } from "../../components/Input"
 import { Textarea } from "../../components/Textarea"
 import { IngredientItem } from "../../components/IngredientItem"
 
-// COMECEI A FAZER O EDIT, MAS ANTES TENHO QUE FAZER O CREATE => INICIAR O CREATE
-
 export function Edit() {
 
   const [title, setTitle] = useState("")
