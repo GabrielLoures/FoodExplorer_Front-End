@@ -32,6 +32,9 @@ export const ContentHeader = styled.div`
 
   width: 100%;
 
+  display: flex;
+  justify-content: space-between;
+
   > a {
     display: flex;
     gap: 11px;
@@ -42,6 +45,10 @@ export const ContentHeader = styled.div`
     font-size: 24px;
     line-height: 140%;
     color: ${({ theme }) => theme.COLORS.GRAY_H1};
+  }
+
+  > .client {
+    display: none;
   }
 
 `;

@@ -44,12 +44,12 @@ export function Create() {
     
     e.preventDefault()
 
-    const formData = new FormData();
-    formData.append("image", image);
-    formData.append("title", title);
-    formData.append("description", description);
-    formData.append("category", category);
-    formData.append("price", price);
+    const formData = new FormData()
+    formData.append("image", image)
+    formData.append("title", title)
+    formData.append("description", description)
+    formData.append("category", category)
+    formData.append("price", price)
 
     ingredients.map(ingredient => (
       formData.append("ingredients", ingredient)
@@ -65,6 +65,7 @@ export function Create() {
           alert(error.response.data.message)
       }})
   }
+
   return(
     <Container>
 
@@ -82,7 +83,7 @@ export function Create() {
         <Form>
 
           <header>
-            <h1>Editar Prato</h1>
+            <h1>Adicionar Prato</h1>
           </header>
 
           <div className="first-row">

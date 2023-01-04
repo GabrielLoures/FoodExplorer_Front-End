@@ -59,11 +59,6 @@ export const Form = styled.form`
   
   > .first-row {
     display: flex;
-    gap: 100px;
-  }
-
-  > .first-row .plateName {
-    margin-right: -75px;
   }
 
   > .second-row {
@@ -73,11 +68,20 @@ export const Form = styled.form`
 
   > .button-row {
     display: flex;
+    gap: 20px;
     justify-content: end;
   }
 
   > .button-row .add-button {
     background: rgba(255, 255, 255, 0.1);
+    opacity: 0.8;
+    border: 1px solid white;
+    border-radius: 5px;
+
+    max-width: 300px;
+  }
+
+  > .button-row .remove-button {
     opacity: 0.8;
     border: 1px solid white;
     border-radius: 5px;
@@ -95,10 +99,17 @@ export const Form = styled.form`
     }
 
     > .button-row {
-      display: block;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
 
     > .button-row .add-button {
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    > .button-row .remove-button {
       width: 100%;
       max-width: 1000px;
     }

@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react'
 
+import { useAuth } from '../../hooks/auth'
+
 import { Header } from "../../components/Header"
 import { Footer } from "../../components/Footer"
 import { Button } from "../../components/Button"
 
-import { Link, useNavigate, useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 import { MdOutlineArrowBackIos } from "react-icons/md"
 
@@ -15,12 +17,12 @@ import { api } from '../../services/api'
 
 export function Details() {
 
+  const { user } = useAuth()
+
   const [data, setData] = useState(null)
   const params = useParams()
 
   const imageURL = data && `${api.defaults.baseURL}/files/${data.image}`
- 
-  const navigate = useNavigate()
 
   useEffect(() => {
     async function fetchDish() {
@@ -40,10 +42,25 @@ export function Details() {
       <Content>
 
         <ContentHeader>
+
           <Link to="/">
             <MdOutlineArrowBackIos/>
             <span>Voltar</span>
           </Link>
+
+          {
+            user.isAdmin === 1 ?
+            (
+              <>
+              <Link 
+                to={`/edit/${params.id}`}                
+              >
+                <span>Editar Prato</span>
+              </Link>
+              </>
+            ) : null
+          }
+          
         </ContentHeader>
 
         { data &&

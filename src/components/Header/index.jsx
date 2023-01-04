@@ -7,11 +7,18 @@ import logo from "../../assets/blue-logo.svg"
 import orderlogo from "../../assets/order-logo.svg"
 import { FiLogOut } from "react-icons/fi";
 
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 export function Header({ children }) {
 
   const { signOut, user } = useAuth()
+
+  const navigate = useNavigate()
+
+  function handleSignOut() {
+    navigate('/')
+    signOut()
+  }
 
   return (
     <Container>
@@ -33,7 +40,7 @@ export function Header({ children }) {
 
       <Button className="order-button" icon={orderlogo} title="Meus pedidos"/>
 
-      <Logout onClick={signOut}>
+      <Logout onClick={handleSignOut}>
         <FiLogOut />
       </Logout>
     </Container>
