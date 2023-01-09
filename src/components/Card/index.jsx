@@ -20,7 +20,7 @@ export function Card({ data, ...rest }) {
 
       <p>{data.description}</p>
 
-      <h1>{data.price}</h1>
+      <h1>R$ {data.price}</h1>
 
       <div className="bottom-card">
         

@@ -3,7 +3,6 @@ import { Link, useNavigate } from 'react-router-dom'
 
 import { api } from '../../services/api'
 
-import { Header } from "../../components/Header"
 import { Footer } from "../../components/Footer"
 import { Input } from "../../components/Input"
 import { Button } from "../../components/Button"
@@ -47,9 +46,7 @@ export function SignUp() {
 
   return (
     <Container>
-
-      <Header />
-
+      
       <Content>
 
         <div className="logo">

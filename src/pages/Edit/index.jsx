@@ -35,8 +35,7 @@ export function Edit() {
       setTitle(title)
       setDescription(description)
       setPrice(price)
-      setIngredients(ingredients.map(ingredient => ingredient.name))
-      setImage(image)
+      setIngredients(ingredients.map(ingredient => ingredient.name))     
     }
 
     fetchDish()
@@ -59,6 +58,10 @@ export function Edit() {
   async function handleEditDish(e) {
     
     e.preventDefault()
+
+    if (!image) {
+      return alert("Adicione uma imagem para o prato para prosseguir")
+    }
 
     const formData = new FormData()
     formData.append("image", image)
